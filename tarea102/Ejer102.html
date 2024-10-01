@@ -42,7 +42,7 @@
         console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
 
         // Parte 4
-        let opcion = window.prompt("Elige que opcion quieres realizar: \n 1.Mostrar el primer contatco \n 2.Mostrar el ultimo contacto \n 3.Añadir un nuevo contacto");
+        let opcion = window.prompt("Elige que opcion quieres realizar: \n 1.Mostrar el primer contatco (primero) \n 2.Mostrar el ultimo contacto (último)\n 3.Añadir un nuevo contacto (nuevo)\n 4.Mostrar todos los contactos (todos)\n 5.Salir del programa (salir)");
         switch (opcion) {
             case "1":
                 console.log(contactos[0].nombre + " " + contactos[0].tlf + " " + contactos[0].correo);
