@@ -40,6 +40,32 @@
         contactos.push({nombre: nuevoNombre, tlf: nuevoTlf, correo: nuevoCorreo});	
 
         console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
+
+        // Parte 4
+        let opcion = window.prompt("Elige que opcion quieres realizar: 1.Mostrar el primer contatco 2.Mostrar el ultimo contacto 3.Añadir un nuevo contacto");
+        switch (opcion) {
+            case "1":
+                console.log(contactos[0].nombre + " " + contactos[0].tlf + " " + contactos[0].correo);
+                break;
+            case "2":
+                console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
+                break;
+            case "3":
+                let nuevoNombre = window.prompt("Introduce tu nombre");
+                let nuevoTlf = window.prompt("Introduce tu teléfono");
+                let nuevoCorreo = window.prompt("Introduce tu correo");
+                if (nuevoNombre == null || nuevoTlf == null || nuevoCorreo == null) {
+                    console.log("No se han introducido los valores necesarios");
+                }else{
+                    contactos.push({nombre: nuevoNombre, tlf: nuevoTlf, correo: nuevoCorreo});	
+                }	
+
+                console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
+                break;
+            default:
+                console.log("Opción no válida");
+                break;
+        }
     </script>
 </body>
 </html>
