@@ -54,13 +54,11 @@
                 let nuevoNombre = window.prompt("Introduce tu nombre");
                 let nuevoTlf = window.prompt("Introduce tu teléfono");
                 let nuevoCorreo = window.prompt("Introduce tu correo");
-                if (nuevoNombre == null || nuevoTlf == null || nuevoCorreo == null) {
+                if (nuevoNombre == "" || nuevoTlf == "" || nuevoCorreo == "") {
                     console.log("No se han introducido los valores necesarios");
                 }else{
                     contactos.push({nombre: nuevoNombre, tlf: nuevoTlf, correo: nuevoCorreo});	
                 }	
-
-                console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
                 break;
             default:
                 console.log("Opción no válida");
