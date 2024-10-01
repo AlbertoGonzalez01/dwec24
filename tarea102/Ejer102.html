@@ -31,6 +31,15 @@
 
         console.log(contactos[0].nombre + " " + contactos[0].tlf + " " + contactos[0].correo);
         console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
+
+        // Parte 3
+        let nuevoNombre = window.prompt("Introduce tu nombre");
+        let nuevoTlf = window.prompt("Introduce tu teléfono");
+        let nuevoCorreo = window.prompt("Introduce tu correo");
+
+        contactos.push({nombre: nuevoNombre, tlf: nuevoTlf, correo: nuevoCorreo});	
+
+        console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
     </script>
 </body>
 </html>
