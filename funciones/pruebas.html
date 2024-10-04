@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //por declaracion puede ser llamada antes de ser declarada
+        function suma(a,b){
+            console.log(a+b);
+        }
+
+        //por expresion tiene que estar declarada antes de ser llamada
+        let producto = function(a,b){
+            return(a*b);
+        }
+
+        //por constructor
+        let division = new Function("a","b","return a/b");
+
+        //sin parametros
+        function saludo(){
+            alert("Hola");
+        }
+
+        var resultado_saludo = saludo();
+        alert(resultado_saludo);
+        //aparece un segundo mensaje "undefined" porque la funcion no tiene return
+
+        //si no uso parentesis guardo todo el codigo de la funcion
+        let resultado_saludo2 = saludo;
+
+        console.log(resultado_saludo2);
+        console.log(resultado_saludo2());
+
+
+    </script>
+</body>
+</html>
