@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //Media y suma hasta meter número negativo
+    let total=0;
+    numeros=0;
+
+    function suma(){
+        let resultado=0;
+        
+        for(let i=0; i<arguments.length;i++){
+            if (arguments[i]<0){
+                break;
+            }else{
+                let num=prompt;
+                resultado+=arguments[i]  
+            }
+        }
+        return resultado;
+    }
+
+    function media(){
+        let resultado=0;
+        let aux=0;
+        
+        for(let i=0; i<arguments.length;i++){
+            if (arguments[i]<0){
+                break;
+            }else{
+                let num=prompt;
+                resultado+=arguments[i]  
+                aux++;
+            }
+        }
+        return (resultado/aux);
+    }
+    
+    console.log(suma(3,4,5,6,7,8,4));
+    console.log(media(3,5,7,1,2,4,-10,4,5));
+    
+    
+    </script>
+</body>
+</html>

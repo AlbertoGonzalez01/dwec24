@@ -35,7 +35,26 @@
         console.log(resultado_saludo2);
         console.log(resultado_saludo2());
 
+        //funciones como variables de otras funciones
+        const cuadrado = function(a){
+            return a*a;
+        }
+        function aplicar_fn(funcion, a){
+            return funcion(a);
+        }
+        aplicar_fn(cuadrado, 5);
 
+        //funciones con mucnhos argumentos
+        function suma_varios(){
+            let suma = 0;
+            for(let i = 0; i < arguments.length; i++){
+                suma += arguments[i];
+            }
+            return suma;
+        }
+
+        //funciones flecha
+        const suma_flecha = (a,b) => a+b; //cambiamos el return pot "=>"
     </script>
 </body>
 </html>
