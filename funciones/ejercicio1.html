@@ -9,6 +9,7 @@
     <script>
 
     //Media y suma hasta meter número negativo
+    /*
     function suma(total=0, numeros=0){
         aux = Number(prompt("escribe un numero positivo"));
         if(aux>=0){
@@ -27,6 +28,56 @@
         window.alert("la media de los numeros es: "+total/numeros);
     }    
     suma();
+    */
+
+    function impares() {
+        let num1 = Number(prompt("introduce el primer numero"));
+        let num2 = Number(prompt("introduce el segundo numero"));
+
+        if (num2 === num1) {
+            console.log("son el mismo numero");
+        } else if (num2 > num1) {
+            for (let i = num1 + 1; i < num2; i++) {
+                if (i % 2 !== 0) console.log(i);
+            }
+        } else {
+            for (let i = num2 + 1; i < num1; i++) {
+                if (i % 2 !== 0) console.log(i);
+            }
+        }
+    }
+
+    function impares2(){
+        let num1 = Number(prompt("introduce el primer numero")); //obtencion de los numeros
+        let num2 = Number(prompt("introduce el segundo numero"));
+
+        //comparamos si son iguales o cual es mayor
+        if (num2 === num1) { 
+            console.log("son el mismo numero");
+        }else if (num1 > num2){
+            if(num2 % 2!=0){ //sacamos si es impar 
+                for (let i=num2+2; i<num1;i=i+2){ //al ser impar mostramos el numero 2 veces mayor y de ahi en adelante
+                    console.log(i);
+                }
+            }else{
+                for (let i=num2+1; i<num1;i=i+2){
+                    console.log(i);
+                }
+            }   
+        }else{
+            if(num1 % 2!=0){
+                for (let i=num1+2; i<num2;i=i+2){
+                    console.log(i);
+                }
+            }else{
+                for (let i=num1+1; i<num2;i=i+2){
+                    console.log(i);
+                }
+            } 
+        }
+    }
+    //impares();
+    impares2();
     </script>
 </body>
 </html>  
