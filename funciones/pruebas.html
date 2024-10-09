@@ -55,6 +55,17 @@
 
         //funciones flecha
         const suma_flecha = (a,b) => a+b; //cambiamos el return pot "=>"
+
+        //definicion de una constante persona con una funcion anonima
+        const persona={
+            nombre:"juan",
+            apellido:"Garcia",
+            consulta :  function(){return `${this.nombre} ${this.apellido}`},
+            consulta2: () => {return `${this.nombre} ${this.apellido}`}
+        }
+
+        console.log(persona.consulta());//sale el valor de cada atributo
+        console.log(persona.consulta2()); // al ser de tipo flecha no saldra el valor saldra "undefined undefined"
     </script>
 </body>
 </html>
