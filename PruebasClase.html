@@ -7,8 +7,55 @@
 </head>
 <body>
     <script>
-        console.log("false"==false); //False
-        console.log("0"==true); //False
+        // console.log("false"==false); //False
+        // console.log("0"==true); //False
+
+        // var i=1;
+        // for(i=1;;1++){
+        //     alert(i);
+        //     if(i==6){
+        //         break;
+        //     }
+        // }
+        let salida =false;
+        while(!salida){
+        let nota = Number(prompt("Introduce tu nota,  Para salir introduce un 11"));
+        let notaSimple=nota.toFixed(0);
+        //alert(nota);
+        notaSimple=Number(notaSimple);
+        switch(notaSimple){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                var respuesta = "Suspenso";
+                break;
+            case 4:
+                var respuesta = "Insuficiente";
+                break;
+            case 5:
+                var respuesta = "Suficiente";
+                break;
+            case 6:
+                var respuesta = "Bien";
+                break;
+            case 7:
+            case 8:
+                var respuesta = "Notable";
+                break;
+            case 9:
+            case 10:
+                var respuesta = "Sobresaliente";
+                break;
+            case 11:
+                salida=true;
+                break;
+            default:
+                var respuesta = "Nota no válida";
+                break;
+        }
+        alert(respuesta);
+        }
     </script>
 </body>
 </html>
