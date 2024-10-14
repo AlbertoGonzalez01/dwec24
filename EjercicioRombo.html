@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Utilizando bucles, el símbolo &nbsp y la etiqueta <br>, dibuja la figura siguiente:
+
+
+               *
+              ***
+             *****
+            *******
+             *****
+              ***
+               *           
+    Se trata de un rombo de asteriscos centrado en la pantalla.*/ -->
+    <p id="parrafo"></p>
+    <script>
+        function rombo(){
+        let rombo = document.getElementById("parrafo").innerHTML;
+        let n=7
+        let hueco=(n+1)/2;
+        for(let i=1;i<=n;i=i+2, hueco=hueco-1){
+            for(let k=0;k<hueco;k++){
+                document.write("&nbsp;&nbsp;");
+            }
+            for(let j=1;j<=i;j++){
+                console.log("*");
+                // document.getElementById("parrafo").innerHTML += "*";
+                rombo+="&nbsp;";
+                document.write("*");
+            }
+            rombo+=("<br>");
+            document.write("<br>");
+        }
+        hueco = 2;
+        for(let i=n-2;i>0;i=i-2, hueco=hueco+1){
+            for(let k=1;k<=hueco;k++){
+                document.write("&nbsp;&nbsp;");
+            }
+            for(let j=1;j<=i;j++){
+                console.log("*");
+                // document.getElementById("parrafo").innerHTML += "*";
+                rombo+="&nbsp;";
+                document.write("*");
+            }
+            rombo+=("<br>");
+            document.write("<br>");
+        }
+        }
+
+        rombo();
+
+    </script>
+    
+</body>
+</html>
