@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <!-- Utilizando bucles, el símbolo &nbsp y la etiqueta <br>, dibuja la figura siguiente:
@@ -19,37 +24,46 @@
     Se trata de un rombo de asteriscos centrado en la pantalla.*/ -->
     <p id="parrafo"></p>
     <script>
+        //creamos una funcion que nos dibuje el rombo
         function rombo(){
-        let rombo = document.getElementById("parrafo").innerHTML;
-        let n=7
-        let hueco=(n+1)/2;
-        for(let i=1;i<=n;i=i+2, hueco=hueco-1){
+        let n=Number(prompt("Introduce un numero impar")); //n sera el numero maximo de asteriscos
+        let hueco=(n+1)/2; //hueco sera el numero de espacios que habra antes de los asteriscos
+        let imprimir = ""; //creamos una variable para almacenar el resultado y luego mostrarlo en el parrafo
+
+        for(let i=1;i<=n;i=i+2, hueco=hueco-1){ //bucle para la parte de arriba del rombo
             for(let k=0;k<hueco;k++){
-                document.write("&nbsp;&nbsp;");
+                document.write("$");
+                imprimir+=("◘");
             }
             for(let j=1;j<=i;j++){
-                console.log("*");
-                // document.getElementById("parrafo").innerHTML += "*";
-                rombo+="&nbsp;";
                 document.write("*");
+                imprimir+=("♥");
             }
-            rombo+=("<br>");
+            for(let k=0;k<hueco;k++){
+                document.write("$");
+                imprimir+=("◘");
+            }
             document.write("<br>");
+            imprimir+=("<br>");
         }
-        hueco = 2;
-        for(let i=n-2;i>0;i=i-2, hueco=hueco+1){
+        hueco = 3;
+        for(let i=n-2;i>0;i=i-2, hueco=hueco+1){ //bucle para la parte de abajo del rombo
+            for(let k=1;k<=hueco;k++){
+                document.write("◘");
+                imprimir+=("◘");
+            }
+            for(let j=1;j<=i;j++){
+                document.write("*");
+                imprimir+=("♥");
+            }
             for(let k=1;k<=hueco;k++){
                 document.write("&nbsp;&nbsp;");
+                imprimir+=("◘");
             }
-            for(let j=1;j<=i;j++){
-                console.log("*");
-                // document.getElementById("parrafo").innerHTML += "*";
-                rombo+="&nbsp;";
-                document.write("*");
-            }
-            rombo+=("<br>");
             document.write("<br>");
+            imprimir+=("<br>");
         }
+        document.getElementById("parrafo").innerHTML = imprimir;
         }
 
         rombo();

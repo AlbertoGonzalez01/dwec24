@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="resultadoSuma"></p>
+    <script>
+    function suma(){
+        var total=0;
+        do{
+            var numero= Number(prompt("Introduce un número, si no quieres meter mas numeros introduce uno negativo"));
+            total+=numero;
+            console.log(total);
+        }while(numero >=0);
+
+        document.getElementById("resultadoSuma").innerHTML = "La suma de los numeros es: "+total;
+    }
+    suma();
+    </script>
+</body>
+</html>
