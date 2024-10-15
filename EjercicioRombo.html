@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        p{
-            color: red;
-        }
-    </style>
 </head>
 <body>
     <!-- Utilizando bucles, el símbolo &nbsp y la etiqueta <br>, dibuja la figura siguiente:
@@ -21,7 +16,12 @@
              *****
               ***
                *           
-    Se trata de un rombo de asteriscos centrado en la pantalla.*/ -->
+    Se trata de un rombo de asteriscos centrado en la pantalla.*/
+    
+    Este codigo crea un rombo en base al numero maximo de asteriscos marcado por el usuario, no por el numero de filas
+    en vez de espacios vamos a poner ♥
+    -->
+
     <p id="parrafo"></p>
     <script>
         //creamos una funcion que nos dibuje el rombo
@@ -30,43 +30,36 @@
         let hueco=(n+1)/2; //hueco sera el numero de espacios que habra antes de los asteriscos
         let imprimir = ""; //creamos una variable para almacenar el resultado y luego mostrarlo en el parrafo
 
-        for(let i=1;i<=n;i=i+2, hueco=hueco-1){ //bucle para la parte de arriba del rombo
-            for(let k=0;k<hueco;k++){
-                document.write("$");
-                imprimir+=("◘");
-            }
-            for(let j=1;j<=i;j++){
-                document.write("*");
+        for(let fila=1;fila<=n;fila+=2, hueco=hueco-1){ //bucle para la parte de arriba del rombo
+            for(let esp=0;esp<hueco;esp++){ //imprime los espacios previos a los asteriscos
                 imprimir+=("♥");
             }
-            for(let k=0;k<hueco;k++){
-                document.write("$");
-                imprimir+=("◘");
+            for(let ast=1;ast<=fila;ast++){ //imprime los asteriscos neecsario dependiendo de la fila que se trate
+                imprimir+=("*");
+            }
+            for(let esp=0;esp<hueco;esp++){ //imprime los espacios posteriores a los asteriscos
+                imprimir+=("♥");
+            }
+            imprimir+=("<br>");
+        }
+        hueco = 2;
+        for(let fila=n-2;fila>0;fila-=2, hueco=hueco+1){ //bucle para la parte de abajo del rombo (es igual que la anterior pero vamos del maximo de asteriscos hasta 1)
+            for(let esp=1;esp<=hueco;esp++){
+                imprimir+=("♥");
+            }
+            for(let ast=1;ast<=fila;ast++){
+                imprimir+=("*");
+            }
+            for(let esp=1;esp<=hueco;esp++){
+                imprimir+=("♥");
             }
             document.write("<br>");
             imprimir+=("<br>");
         }
-        hueco = 3;
-        for(let i=n-2;i>0;i=i-2, hueco=hueco+1){ //bucle para la parte de abajo del rombo
-            for(let k=1;k<=hueco;k++){
-                document.write("◘");
-                imprimir+=("◘");
-            }
-            for(let j=1;j<=i;j++){
-                document.write("*");
-                imprimir+=("♥");
-            }
-            for(let k=1;k<=hueco;k++){
-                document.write("&nbsp;&nbsp;");
-                imprimir+=("◘");
-            }
-            document.write("<br>");
-            imprimir+=("<br>");
-        }
-        document.getElementById("parrafo").innerHTML = imprimir;
+        document.getElementById("parrafo").innerHTML = imprimir; //mostramos el resultado en el parrafo
         }
 
-        rombo();
+        rombo(); //lamamos a la funcion para que se ejecute
 
     </script>
     
