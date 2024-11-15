@@ -119,6 +119,15 @@
                 addContact(contactos, nuevoNombre, nuevoTlf, nuevoCorreo);
             }else if(opcion=="todos"){
                 showAllContacts(contactos);
+            } else if (opcion == "sort") {
+                let criterio = window.prompt("Introduce el criterio de ordenación (nombre, tlf, correo)");
+                if (criterio == "nombre" || criterio == "tlf" || criterio == "correo") {
+                    contactos.sort((a, b) => a[criterio].localeCompare(b[criterio]));
+                    console.log("Contactos ordenados por " + criterio);
+                    showAllContacts(contactos);
+                } else {
+                    console.log("Criterio no válido");
+                }
             }else if(opcion=="salir"){
                 console.log("Saliendo del programa");
             }else{
