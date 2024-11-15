@@ -42,38 +42,87 @@
         // console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
 
         // Parte 4/5
-        let salir=false;
-        while(!salir){
-            let opcion = window.prompt("Elige que opcion quieres realizar: \n 1.Mostrar el primer contatco (primero) \n 2.Mostrar el ultimo contacto (último)\n 3.Añadir un nuevo contacto (nuevo)\n 4.Mostrar todos los contactos (todos)\n 5.Salir del programa (salir)");
-            switch (opcion) {
-                case "primero":
-                    console.log(contactos[0].nombre + " " + contactos[0].tlf + " " + contactos[0].correo);
-                    break;
-                case "ultimo":
-                    console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
-                    break;
-                case "nuevo":
-                    let nuevoNombre = window.prompt("Introduce tu nombre");
-                    let nuevoTlf = window.prompt("Introduce tu teléfono");
-                    let nuevoCorreo = window.prompt("Introduce tu correo");
-                    if (nuevoNombre == "" || nuevoTlf == "" || nuevoCorreo == "") {
-                        console.log("No se han introducido los valores necesarios");
-                    }else{
-                        contactos.push({nombre: nuevoNombre, tlf: nuevoTlf, correo: nuevoCorreo});	
-                    }
-                    break;	
-                case "todos":
-                    for(let i = 0; i < contactos.length; i++){
-                        console.log(contactos[i].nombre + " " + contactos[i].tlf + " " + contactos[i].correo);
-                    }
-                    break;
-                case "salir":
-                    console.log("Saliendo del programa");
-                    salir=true;
-                    break;
-                default:
-                    console.log("Opción no válida");
-                    break;
+        // let salir=false;
+        // while(!salir){
+        //     let opcion = window.prompt("Elige que opcion quieres realizar: \n 1.Mostrar el primer contatco (primero) \n 2.Mostrar el ultimo contacto (último)\n 3.Añadir un nuevo contacto (nuevo)\n 4.Mostrar todos los contactos (todos)\n 5.Salir del programa (salir)");
+        //     switch (opcion) {
+        //         case "primero":
+        //             console.log(contactos[0].nombre + " " + contactos[0].tlf + " " + contactos[0].correo);
+        //             break;
+        //         case "ultimo":
+        //             console.log(contactos[contactos.length-1].nombre + " " + contactos[contactos.length-1].tlf + " " + contactos[contactos.length-1].correo);
+        //             break;
+        //         case "nuevo":
+        //             let nuevoNombre = window.prompt("Introduce tu nombre");
+        //             let nuevoTlf = window.prompt("Introduce tu teléfono");
+        //             let nuevoCorreo = window.prompt("Introduce tu correo");
+        //             if (nuevoNombre == "" || nuevoTlf == "" || nuevoCorreo == "") {
+        //                 console.log("No se han introducido los valores necesarios");
+        //             }else{
+        //                 contactos.push({nombre: nuevoNombre, tlf: nuevoTlf, correo: nuevoCorreo});	
+        //             }
+        //             break;	
+        //         case "todos":
+        //             for(let i = 0; i < contactos.length; i++){
+        //                 console.log(contactos[i].nombre + " " + contactos[i].tlf + " " + contactos[i].correo);
+        //             }
+        //             break;
+        //         case "salir":
+        //             console.log("Saliendo del programa");
+        //             salir=true;
+        //             break;
+        //         default:
+        //             console.log("Opción no válida");
+        //             break;
+        //     }
+        // }
+
+        function showContact(listaContactos, contacto){
+            if(listaContactos instanceof Array){
+                if(contactos instanceof Array && contacto >= 0 && contacto < listaContactos.length){
+                    console.log(listaContactos[contacto].nombre + " " + listaContactos[contacto].tlf + " " + listaContactos[contacto].correo);
+                }else{
+                        console.log("No se ha introducido un contacto válido");
+                }
+            }
+        }
+
+        function showAllContacts(listaContactos){
+            if(listaContactos instanceof Array){
+                for(let i = 0; i < listaContactos.length; i++){
+                    console.log(listaContactos[i].nombre + " " + listaContactos[i].tlf + " " + listaContactos[i].correo);
+                }
+            }
+        }
+
+        function addContact(listaContactos, nombre, tlf, correo){
+            if(listaContactos instanceof Array && nombre != "" && tlf != "" && correo != ""){
+                listaContactos.push({nombre: nombre, tlf: tlf, correo: correo});
+            }else{
+                console.log("No se han introducido los valores necesarios");
+            }
+        }
+
+        let eleccion="";
+
+        while(opcion!="salir"){
+            opcion=prompt("Elige que opcion quieres realizar: \n 1.Mostrar el primer contacto(primero) \n 2.Mostrar el ultimo contacto(ultimo) \n 3.Añadir un nuevo contacto (nuevo)\n 4.Mostrar todos los contactos (todos)\n 5.Salir del programa (salir)");
+
+            if(opcion=="primero"){
+                showContact(contactos, 0);
+            }else if(opcion=="ultimo"){
+                showContact(contactos, contactos.length-1);
+            }else if(opcion=="nuevo"){
+                let nuevoNombre = window.prompt("Introduce tu nombre");
+                let nuevoTlf = window.prompt("Introduce tu teléfono");
+                let nuevoCorreo = window.prompt("Introduce tu correo");
+                addContact(contactos, nuevoNombre, nuevoTlf, nuevoCorreo);
+            }else if(opcion=="todos"){
+                showAllContacts(contactos);
+            }else if(opcion=="salir"){
+                console.log("Saliendo del programa");
+            }else{
+                console.log("Opción no válida");
             }
         }
     </script>
