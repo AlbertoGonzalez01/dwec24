@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function ordenado(arrayNumeros){
+        //     let arrayOrdenado=arrayNumeros.sort((a, b) => a - b);
+        //     return arrayOrdenado;
+        // }
+
+        // let miarray=[1,5,9,2,5,345,23,76,4,6,8,2];
+
+        // console.log(miarray);
+        // console.log(ordenado(miarray));
+
+        alumnos=[
+            {nombre:"alberto", edad:20},
+            {nombre:"denis", edad:23},
+            {nombre:"Ivan", edad:18},
+            {nombre:"Javi", edad:28}
+        ];
+
+
+        // function ordenado1(arrayNumeros1){
+        //     let arrayOrdenado1=arrayNumeros1.sort((a, b) => a.edad - b.edad);
+        //     return arrayOrdenado1;
+        // }
+        // function ordenado2(arrayNumeros2){
+        //     let arrayOrdenado2=arrayNumeros2.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        //     return arrayOrdenado2;
+        // }
+        // console.log(ordenado1(alumnos));
+        // console.log(ordenado2(alumnos));
+        console.log(alumnos.sort((a, b) => a.edad - b.edad));
+        //console.log(alumnos.sort((a, b) => a.nombre.localeCompare(b.nombre)));
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let daw="Desarrollo de aplicaciones web";
+        let dam="Desarrollo de aplicaciones multiplataforma";
+        let asir="Administración de 'sistemas informáticos' en red";
+        let smr="Sistemas \"microinformáticos\" y redes"; //pintar comillas dentro de un texto
+        let ciclos=new String("");
+
+        ciclos+="En este Instuto hay dos ciclos de grado superior: \n"+daw +", "+dam+ " y "+ asir+ "\n y un ciclo de grado medio: \n"+smr;
+
+        //alert(ciclos);
+
+        ciclos=`Hay 2 ciclos de Grado superior: \n ${daw} y ${dam} \n y 1 ciclo de Grado medio: \n ${smr}`;
+
+        //alert(ciclos);
+
+        let caracter= ciclos.charAt(3);
+        alert(caracter);
+
+        if(caracter < dam.charAt(4)){
+            alert("Eureca");
+        }
+        alert(ciclos.indexOf("o"));
+
+        alert(ciclos.indexOf("rad"));
+        
+    </script>
+</body>
+</html>

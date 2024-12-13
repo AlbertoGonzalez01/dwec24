@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Recorrido de un array</h2>
+    <p id="escribeaqui"></p>
+    <script>
+
+        /*funcionamiento bucle for, for in, for of
+        for: para cuando quiero tener un control sobre el indice y su flujo
+        for in: para cuando tienes objetos y quieres recorrer sus propiedades(claves)
+        for of: para cuando tienes objetos y quieres recorrer sus valores/ recomendable para los arrays
+        for each: para cuando quieres recorrer un array
+        */
+
+        let txt=""
+        let txt2=""
+        let txt3=""
+        let txt4=""
+        var dias=['lunes','martes','miercoles','jueves','viernes','sabado','domingo'];
+        dias.forEach(mostrar) //forEach
+        function mostrar(valor, index, array){
+            txt += valor + " ";
+        }
+        document.getElementById("escribeaqui").innerHTML = txt + "</br>"; 
+
+        var longitud = dias.length;
+        for(var i=0; i<longitud; i++){ //for normal
+            txt2 += dias[i] + "--";
+        }
+        document.getElementById("escribeaqui").innerHTML += txt2 + "</br>";
+
+        for (let dia of dias){ //for of
+            // console.log(dia);
+            txt3 += dia + "++";
+        }
+        document.getElementById("escribeaqui").innerHTML += txt3 + "</br>";
+
+        for (let dia in dias){ //for in
+            // console.log(dia);
+            txt4 += dias[dia] + "**";
+        }
+        document.getElementById("escribeaqui").innerHTML += txt4 + "</br>";
+
+        /* manejo de errores
+        try{
+            //codigo a probar
+        }catch(error){
+            //codigo a ejecutar si hay un error
+        }finally{
+            //codigo que se ejecuta siempre
+        }
+        */
+
+        function mes(numero){
+            try{
+                if(numero>12){
+                    throw "Numero demasiado grande";
+                }
+                if(numero<1){
+                    throw "Numero demasiado pequeño";
+                }
+                if(isNaN(Number(numero))){
+                    throw "No es un numero";
+                }
+                    let meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+                    return meses[numero-1];
+
+            }catch(error){
+                return "Error: " + error;
+                console.log("Error: " + error);
+            }
+        }
+        let numeroPedido = prompt("Introduce un numero del 1 al 12");
+        document.getElementById("escribeaqui").innerHTML += mes(numeroPedido);
+    </script>
+
+</body>
+</html>

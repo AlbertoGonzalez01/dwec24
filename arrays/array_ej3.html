@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 68573528463604 -->
+    <script>
+
+        let cadenaNumeros=0;
+
+        while(isNaN(Number(cadenaNumeros)) || cadenaNumeros.length%2!=0){
+            cadenaNumeros = prompt("Introduce una cadena de números par");
+            if(isNaN(Number(cadenaNumeros))) alert("No has introducido una cadena de números");
+            if(cadenaNumeros.length%2!=0) alert("No has introducido una cadena de números par");
+            
+        }
+
+        let pasajeros=0;
+        console.log(cadenaNumeros);
+        for(let i=cadenaNumeros.length-1; i>0; i-=2){
+            console.log("entraron:" +cadenaNumeros[i]);
+            pasajeros+=Number(cadenaNumeros[i]);
+            console.log("salieron: "+cadenaNumeros[i-1]);
+            pasajeros-=Number(cadenaNumeros[i-1]);
+        }
+
+        console.log("El número de pasajeros es: "+pasajeros);
+
+    </script>
+</body>
+</html>

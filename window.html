@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ventana"></p>
+    <script>
+
+        window.name="Ventana nueva";
+        var texto="";
+        texto+="</br>Nombre de la ventana: "+window.name;
+        texto+="</br>Altura de la ventana interno: "+window.innerHeight;
+        texto+="</br>Anchura de la ventana interno: "+window.innerWidth;
+        texto+="</br>Altura de la ventana externo: "+window.outerHeight;
+        texto+="</br>Anchura de la ventana externo: "+window.outerWidth;
+        texto+="</br>scroll horizontal: "+window.pageXOffset;
+        texto+="</br>scroll vertical: "+window.pageYOffset;
+
+        document.getElementById("ventana").innerHTML=texto;
+
+        var miVentana
+        function crearVentana(){
+            miVentana=window.open("","","width=300,height=300");
+
+        }
+        function cerrarVentana(){
+            miVentana.close();
+        }
+        function redimensionar(){
+            miVentana.resizeTo(500,500);
+        }
+        function mover(){
+            miVentana.moveBy(200,200);
+        }
+        function cmabiarFoco(){
+            miVentana.focus();
+        }
+        function imprimir(){
+            miVentana.print();
+        }
+    </script>
+    <button onclick="crearVentana()">Crear ventana</button>
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+    <button onclick="redimensionar()">Redimensionar ventana</button>
+    <button onclick="mover()">Mover ventana</button>
+    <button onclick="cmabiarFoco()">Dar foco</button>
+    <button onclick="imprimir()">Imprimir</button>
+
+
+    
+</body>
+</html>

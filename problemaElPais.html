@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Entre los dos números, aparecen todos los dígitos del 0 al 9, necesariamente una vez cada uno.
+        // La suma de los dos números vuelve a ser un número de lotería, es decir, tiene 5 cifras
+        // let numero = new Set();
+        // let setNum = new Set();
+        // const numFinal = new Set();
+        // function getNum(setNum){
+
+        //     let numSuma=(Math.floor(Math.random()*10));
+        //     setNum.add(numSuma);
+            
+        //     if(setNum.size<9){
+        //         getNum(setNum);
+        //     }else{
+        //         return setNum;
+        //     }
+        // }   
+        // numero.add(getNum(numero));
+
+        // console.log(numero);
+        function descomponerEnArray(num){
+            let array = [];
+            for(let i=0; i<5;i++){
+                array.push(num%10);
+                num = Math.floor(num/10);
+            }
+            return array;
+        }
+        // function convertirEnNumero(array){
+        //     let num = 0;
+        //     for(let i=0; i<array.length; i++){
+        //         num = num*10 + array[i];
+        //     }
+        //     return num;
+        // }
+        // let enseñar="";
+        // let numero1=0;
+        // let numero2=0;
+
+        // let num1= 12345
+        // let num2 = 67890
+
+        // numero1 = new Set(descomponerEnArray(num1))
+        // numero2 = new Set(descomponerEnArray(num2))
+        // console.log(numero1);
+        // console.log(numero2);
+        // numero1 = convertirEnNumero(Array.from(numero1));
+        // numero2 = convertirEnNumero(Array.from(numero2));
+        // // numero1=(Array.from(num1).join(''));
+        // // numero2=(Array.from(num2).join(''));
+        // console.log(numero1);
+        // console.log(numero2);
+
+
+        for(let i=1; i<100000; i++){
+            let num1 = new Set(descomponerEnArray(i));
+            //num1.add(i);
+            if(num1.size==5){
+               for(let j=1; j<50000; j++){
+                    let num2 = new Set(descomponerEnArray(j));
+                    //num2.add(j);
+                    numero=num1+" "+num2;
+                    let sumNum = new Set(descomponerEnArray(numero));
+                    //sumNum.add(numero);
+                    console.log(sumNum);
+                    if(num2.size==5 && sumNum.size==10){
+                        for(let k=0; k<sumNum.size; k++){
+                            enseñar+=sumNum[k];  
+                        }
+                        numero1=Number(Array.from(num1).join(''));
+                        numero2=Number(Array.from(num2).join(''));
+                        console.log(numero1+numero2);
+                    }                                
+                } 
+            }            
+        }
+
+        // do{ 
+            
+        // }while(numFinal>99999 || numFinal.l)
+
+    </script>
+</body>
+</html>

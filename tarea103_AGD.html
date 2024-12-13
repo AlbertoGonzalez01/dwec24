@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="vocal"></p>
+    <script>
+        //sin includes
+        var texto=prompt("Introduce un texto");
+        var vocales=["a","e","i","o","u"];
+        var vocal=document.getElementById("vocal");
+        texto=texto.toLowerCase();
+        for(let i=0; i<texto.length;i++){
+            for(let j=0; j<vocales.length;j++){
+                if(texto[i]==vocales[j]){
+                    vocal.innerHTML+=(i+1)+" "; //mostramos el numero en que esta la vocal
+                    vocal.innerHTML+=texto[i]; //mostramos la vocal
+                    break;
+                }
+            }
+        }
+
+
+
+
+
+        //con includes
+        var texto=prompt("Introduce un texto");
+        texto=texto.toLowerCase();
+        var vocales=["a","e","i","o","u"];
+        var vocal=document.getElementById("vocal");
+        for(let i=0; i<texto.length;i++){
+            if(vocales.includes(texto[i])){
+                vocal.innerHTML+=(i+1)+" "; //mostramos el numero en que esta la vocal
+                vocal.innerHTML+=texto[i]; //mostramos la vocal
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>

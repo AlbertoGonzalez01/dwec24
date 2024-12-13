@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="tradicional">click</h3>
+    <p id="miTexto">Texto a modificar</p>
+    <button id="boton">Cambiar</button>
+    <h3 id="w3c">modelo del W3C</h3>
+    <h3 id="w3cAnonima">modelo w3c con funciones Anonimas</h3>
+
+    <h3 id="eventos">Eventos</h3>
+    <p id="parrafo1">parrafo1</p>
+    <p id="parrafo2">parrafo2</p>
+    <script>
+
+        window.onload = function(){
+            alert("La pagina ha cargado correcamente")
+            document.getElementById("tradicional").onclick = miMensaje
+        }
+
+        function miMensaje(){
+            document.getElementById("tradicional").innerHTML = "Modelo Tradicional"
+            document.getElementById("tradicional").onclick=null
+        }
+
+        function alPulsar(){
+            document.getElementById("miTexto").innerHTML = "Texto modificado"
+        }
+        document.getElementById("boton").addEventListener("click", alPulsar)
+
+        document.getElementById("w3c").addEventListener("click", saludarunaVez)
+        document.getElementById("w3c").addEventListener("click", colorear)
+        document.getElementById("w3cAnonima").addEventListener("mouseover", function(){document.getElementById("w3c").style.color = "blue"})
+
+        function saludarunaVez(){
+            alert("Holaaa!!")
+        }
+        function colorear(){
+            document.getElementById("w3c").style.color = "red"
+        }
+
+        document.getElementById("eventos").addEventListener("mouseover", manejador)
+        document.getElementById("eventos").addEventListener("mouseout", manejador)
+        document.getElementById("parrafo1").addEventListener("click", saludar)
+        document.getElementById("parrafo2").addEventListener("click", saludar)
+
+        function manejador(e){
+            switch(e.type){
+                case "mouseover":
+                    this.style.color = "red"
+                    break
+            
+                case "mouseout":
+                    this.style.color = "blue"
+                    break
+            }
+        }
+
+        function saludar(e){
+            console.log(e)
+            alert(`has pulsado el parrafo ${e.target.id}`)
+        }
+        
+    </script>
+</body>
+</html>

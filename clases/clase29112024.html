@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>modelo eventos lineas</h1>
+    <h3 id="cab1" onclick="cambiar(this)" onmouseover="this.style.color='red'">evento click</h3>
+    <a href="http://www.google.com" onclick="return preguntar();">google</a>
+    <script>
+    function cambiar(elem){
+        elem.innerHTML="JavaScript en XHTML";
+    }
+    function alertar(){
+        alert("vamos a google");
+        
+    }
+    function preguntar(){
+        return confirm("¿Estas seguro que quieres ir a google?");
+    }
+    </script>
+</body>
+</html>

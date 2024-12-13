@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //set -> array para el cual no se repiten los numeros que contiene
+        //filter
+        let arrayNotas = [5.2, 6.3, 7.5, 8.1, 9.0, 4.5, 6.7, 7.8, 8.9, 9.5]
+        let arrayAprobados = arrayNotas.filter(function(nota) {
+            return nota >= 5
+        })
+
+        let arrayAprobados2 = arrayNotas.filter(nota => nota >= 5)
+
+        //find -> devuelve el primer elemento que cumpla la condición
+        let primerAprobado = arrayNotas.find(nota => nota >= 5)
+        //findIndex -> devuelve el índice del primer elemento que cumpla la condición, devuelve -1 si no hay nadie q cumpla la condicion
+
+        //every -> devuelve true si todos los elementos cumple la condición
+        //some -> devuelve true si alguno de los elementos cumple la condición
+
+        //map -> devuelve un nuevo array con los resultados de la función
+        let arrayDoble = arrayNotas.map(nota => nota * 2)
+
+        //reduce -> devuelve un único valor
+        let sumaNotas = arrayNotas.reduce((total, nota) => total + nota, 0)
+
+
+        //calcular la media aritmetica de los siguientes arrays
+        let array1 = [1,2,3,4,5,6,7,8]
+        let array2 =[1,2,3,8,9,0,43,45,65]
+        let array3 = [17,32,87,45]
+        //tanto a los numeros repetidos como sin repetir
+        let setCompleto = new Set([...array1, ...array2, ...array3])
+        let sumaSet = [...setCompleto].reduce((total, numero) => total + numero, 0)
+        let mediaSet = sumaSet / setCompleto.size
+
+        console.log(mediaSet)
+
+        let arrayCompleto2 = [...array1, ...array2, ...array3]
+        let sumaCompleto2 = arrayCompleto2.reduce((total, numero) => total + numero, 0)
+        let mediaCompleto2 = sumaCompleto2 / arrayCompleto2.length
+
+        console.log(mediaCompleto2)
+
+        //dado el array de los dias de la semana encontrar los dias que empiezan por 'M'
+        let dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
+        let diasM = dias.filter(dia => dia[0] === 'M')
+
+        console.log(diasM)
+
+    </script>
+</body>
+</html>

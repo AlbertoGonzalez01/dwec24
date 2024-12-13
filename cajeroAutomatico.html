@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>introduzca un numero a sacar</p>
+    <input type="text" id="demo">
+    <button type="button" onclick="miFuncion()">probar</button>
+    <p id="p01"></p>
+    <p>dinero actual:</p>
+    <p id="p02"></p>
+    <script>
+        var dinero=1000;
+        function restirar(total, sacar){
+            if(sacar>total) throw "no hay dinero suficiente";
+            else{
+                return total-sacar;
+            }
+            
+        }
+        function miFuncion(){
+            const mensaje=document.getElementById("p01");
+            mensaje.innerHTML="";
+            let x=document.getElementById("demo").value;
+            const y=document.getElementById("p02");
+            y.innerHTML=dinero;
+            try{
+                if(x.trim()=="") throw "datos vacios";
+                if(isNaN(x)) throw "no es un numero";
+                x=Number(x);
+                if(x>dinero) throw "no tienes tanto dinero";
+                if(x<0) throw "no puedes poner un numero negativo";
+                if(x<dinero) mensaje.innerHTML="dinero restante: "+(dinero-x);
+                dinero=restar(dinero,x);
+                y.innerHTML=""+ dinero;
+            }catch(error){
+                mensaje.innerHTML="error: "+error;
+            }
+        }
+        miFuncion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="temporizador"></p>
+    <p id="frase"> </p>
+    <script>
+
+        let dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
+        let diasM = dias.filter(dia => dia[0] === 'M')
+        let mostrar=document.getElementById('temporizador')
+        //realiza un temporizador de 60seg
+        let segundos = 60
+        let temporizador = setInterval(() => {
+            mostrar.innerHTML=segundos
+            segundos--
+            if(segundos === -1) {
+                clearInterval(temporizador)
+                alert("Los dias de la semana que empiezan por 'M' son: "+diasM)
+                document.getElementById("frase").innerHTML="Los dias de la semana que empiezan por 'M' son: "+diasM
+            }
+        }, 1000)
+
+
+        
+    </script>
+</body>
+</html>

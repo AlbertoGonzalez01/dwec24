@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="resultado">
+    <p id="frase"></p>
+
+    </div>
+    <script>
+
+        let respuesta=prompt("Introduce una frase (si no quieres continuar escribe salir)");
+        frase="";
+        frase+=respuesta;
+        let arrayPalabras=[];
+        while(respuesta!="salir"){
+            
+            arrayPalabras = frase.split(" "); //separa la frase por los espacios
+            arrayOrdenado= arrayPalabras.slice();
+            arrayOrdenado.sort();
+            console.log(arrayPalabras);
+            console.log(arrayPalabras[0]); 
+            console.log(arrayPalabras[arrayPalabras.length-1]);
+            console.log(arrayPalabras.length);
+           
+            //document.getElementById("frase").innerHTML += "<p>"+frase+"</p></br>";
+            document.getElementById("resultado").innerHTML += "<p><b>frase: </b>"+frase+"</p>";
+            document.getElementById("resultado").innerHTML += `<p>Primera palabra: ${arrayPalabras[0]} </p>`;
+            document.getElementById("resultado").innerHTML += `<p>Última palabra: ${arrayPalabras[arrayPalabras.length-1]} </p>`;
+            document.getElementById("resultado").innerHTML += `<p>Número de palabras: ${arrayPalabras.length} </p>`;  
+            // document.getElementById("resultado").innerHTML += `<p>Primera palabra: ${arrayOrdenado[0]} </p>`;
+            // document.getElementById("resultado").innerHTML += `<p>Última palabra: ${arrayOrdenado[arrayPalabras.length-1]} </p>`;
+            // document.getElementById("resultado").innerHTML += `<p>Número de palabras: ${arrayOrdenado.length} </p>`;          
+            respuesta = prompt("Introduce una frase (si no quieres continuar escribe salir)");
+            if(respuesta!="salir") frase+=" "+respuesta;
+        }
+        
+
+    </script>
+</body>
+</html>

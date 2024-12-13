@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const numeros = [1,2,3,4,5,6,3,7,7]
+
+        const numerosDuplicados = numeros.map(numero => numero*2)
+
+        const numerosPares = numeros.filter(numero => numero%2 === 0)
+        const numerosimpares = numeros.filter(numero => numero%2 !== 0)
+
+        const sumaNumerosImpares = numerosimpares.reduce((total,numero) => total+numero)
+
+        console.log(numerosDuplicados)
+        console.log(numerosPares)
+        console.log(sumaNumerosImpares)
+
+        //parte 2
+        const usuarios = [
+            { id: 1, nombre: 'Juan', edad: 25 },
+            { id: 2, nombre: 'María', edad: 30 },
+            { id: 3, nombre: 'Pedro', edad: 20 },
+            { id: 4, nombre: 'Ana', edad: 35 },
+            { id: 5, nombre: 'Luisa', edad: 22 },
+            { id: 6, nombre: 'Alberto', edad: 19 },
+        ];
+
+        const mayoresEdad = usuarios.filter(usuarios => usuarios.edad >= 18)
+        const sumaEdadMayores = mayoresEdad.reduce((total,usuarios) => total+usuarios.edad,0)
+        const promedioMayores = sumaEdadMayores/mayoresEdad.length
+        
+        
+    function menor(usuarios){
+            let menor = usuarios[0]
+            for(let i=0;i<usuarios.length;i++){
+            if(usuarios[i].edad < menor.edad){
+                menor=usuarios[i]
+            }
+            }
+            return menor
+        }
+        const jovenMayores = menor(mayoresEdad)
+        const usuariosA = usuarios.filter(usuarios => usuarios.nombre[0] === 'A')
+
+        console.log(mayoresEdad)
+        console.log(promedioMayores)
+        console.log(jovenMayores)
+        console.log(usuariosA)
+        
+    </script>
+</body>
+</html>

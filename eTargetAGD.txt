@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        document.getElementById("eventos").addEventListener("mouseover", manejador)
+        document.getElementById("eventos").addEventListener("mouseout", manejador)
+        document.getElementById("parrafo1").addEventListener("click", saludar)
+        document.getElementById("parrafo2").addEventListener("click", saludar)
+
+        function manejador(e){
+            switch(e.type){
+                case "mouseover":
+                    this.style.color = "red"
+                    break
+            
+                case "mouseout":
+                    this.style.color = "blue"
+                    break
+            }
+        }
+
+        function saludar(e){
+            console.log(e)
+            alert(`has pulsado el parrafo ${e.target.id}`)
+        }
+
+    </script>
+</body>
+</html>

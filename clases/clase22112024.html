@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        var miVentana=window.open("", "", "width=100,height=200,left=100,top=200"); //abrir ventana nueva
+        miVentana.document.write("<h1>hola</h1>"); //escribir en la ventana
+        miVentana.moveBy(100, 300); //mover la ventana
+        setTimeout("miVentana.close()",2000);
+        //Ejercicio 2
+        let miVentana2 = window.open("", "", "width=100,height=100,left=100,top=200");
+        setTimeout(() => {
+            miVentana2.document.write("<h1>Bienvenido</h1><button onclick='window.close()'>Cerrar</button>");
+        }, 2000);
+    </script>
+</body>
+</html>

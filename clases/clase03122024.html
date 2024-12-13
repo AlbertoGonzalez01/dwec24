@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const user = {
+            name:"Otto",
+            role:"arquero",
+            power:90,
+            life:100,
+            features: ["learn","code","paint"]
+        }
+
+        const fullUser = {
+            ...structuredClone(user),
+            life: 25,
+            power: 50
+        }
+
+        console.log(fullUser)
+        console.log(Object.keys(user))
+        console.log(Object.values(user))
+        console.log(Object.entries(user))
+
+        animales = ["perro","gato","pez","loro"]
+        console.log(animales)
+        console.log(Object.keys(animales))
+        console.log(Object.values(animales))
+        console.log(Object.entries(animales))
+
+        usuarioKeys = ["name", "role", "power", "life", "features", "talk"]
+        usuarioValues = ["Otto", "arquero", 90, 100, ["learn","code","paint"], function(){console.log("Hola")}]
+
+        usuario=[{"name":"Otto", "role":"arquero", "power":90, "life":100, "features":["learn","code","paint"], "talk":function(){console.log("Hola")}}]
+
+        const Alberto = {}
+
+        for(let i = 0; i < usuarioKeys.length; i++){
+            Alberto[usuarioKeys[i]] = usuarioValues[i]
+        }
+
+        console.log(Alberto)
+
+        const pedro = Object.fromEntries(usuario)
+
+        console.log(pedro)
+
+
+
+    </script>
+</body>
+</html>

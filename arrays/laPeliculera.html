@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nombre: </p>
+    <p id="nombreCliente"></p>
+    <p>Nombre de la Pelicula:</p>
+    <p id="nombrePelicula"></p>
+    <p>Comidas y bebidas a las que accedes</p>
+    <p id="comidasBebidas"></p>
+    <p>Total a pagar:</p>
+    <p id="precio"></p>
+    <script>
+        let nombre="";
+        let edad=0;
+        let nombrePelicula="Spider Man";
+        let comidasBebidas =[];
+        let PrecioFinal=8.5;
+        descuento=0;
+        peliculas =["Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"];
+        while(nombre=="" || !isNaN(Number(nombre))){
+            nombre=prompt("Escribe tu nombre");
+            if(nombre==""){
+                alert("rellena el espacio con tun nombre")
+            }else if(!isNaN(Number(nombre))){
+                alert("No puede contener numeros")
+            }
+        }
+
+        while(edad<=0 || isNaN(Number(edad))){
+            edad=prompt("Cual es tu edad?");
+            if (edad<=0){ 
+                alert("Tu edad no puede ser 0 o menor");
+            }else if(isNaN(Number(edad))){
+                alert("Debes escribir un numero");
+            }
+        }
+
+        while(nombrePelicula="" || peliculas.includes(nombrePelicula) || (edad<=17 && nombrePelicula=="18videos")){
+            nombrePelicula = prompt("que pelicula quieres ver? ('Spider Man', 'Superman', 'Dragon Ball Super', 'La era del hielo', '18videos')");
+            if(nombrePelicula=""){
+                alert("Debes rellenar el espacio");
+            }else if(peliculas.includes(nombrePelicula)){
+                alert("Esta pelicula no esta incluida en la cartelera");
+            }else if(edad<=17 && nombrePelicula=="18videos"){
+                alert("No tienes la edad necesaria para ver esta pelicula");
+            }
+        }
+
+        if(edad<=17){
+            descuento=0.5;
+            comidasBebidas.push("Caramelos");
+            comidasBebidas.push("Refresco");
+        }else if(edad>=18 && edad<=25){
+            descuento =0;
+            comidasBebidas.push("Palomitas");
+            comidasBebidas.push("Perrito");
+            comidasBebidas.push("refresco");
+        }else if(edad>=26 && edad<=35){
+            descuento=0.1;
+            comidasBebidas.push("Perrito");
+            comidasBebidas.push("refresco");
+        }else if(edad>=36){
+            descuento=0.2;
+            comidasBebidas.push("Agua");
+        }
+
+        PrecioFinal=PrecioFinal-(PrecioFinal*descuento);
+
+        document.getElementById("nombreCliente").innerHTML=nombre;
+        document.getElementById("nombrePelicula").innerHTML=nombrePelicula;
+        document.getElementById("precio").innerHTML=PrecioFinal;
+
+        for(comida in comidasBebidas){
+            document.getElementById("comidasBebidas").innerHTML+=comida;
+        }
+
+    </script>
+</body>
+</html>

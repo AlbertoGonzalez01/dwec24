@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // realizar una funcion que recoba un texto y diga cuantas veces aparecen lo ssiguientes patrones:"00", "101", "ABC", "HO"
+        // en la cadena "000" aparece 2 veces el patron "00"
+        //1110101000abcho
+        let cadena = prompt("Introduce una cadena de texto");
+        
+        console.time("Tiempo de ejecución");
+        cadena = cadena.toUpperCase();
+        patrones = ["00", "101", "ABC", "HO"];
+        
+        /*function numeroPratones(texto){
+            
+            texto=texto.toUpperCase();
+            //alert(texto);
+
+            contador=0;
+
+            let posicion=texto.indexOf("00");
+            while (posicion !== -1) {
+                contador++;
+                // Buscar desde la siguiente posición después de la coincidencia encontrada
+                posicion = texto.indexOf("00", posicion + 1);
+            }
+            posicion=texto.indexOf("101");
+            while (posicion !== -1) {
+                contador++;
+                // Buscar desde la siguiente posición después de la coincidencia encontrada
+                posicion = texto.indexOf("101", posicion + 1);
+            }
+            posicion=texto.indexOf("ABC");
+            while (posicion !== -1) {
+                contador++;
+                // Buscar desde la siguiente posición después de la coincidencia encontrada
+                posicion = texto.indexOf("ABC", posicion + 1);
+            }
+            posicion=texto.indexOf("HO");
+            while (posicion !== -1) {
+                contador++;
+                // Buscar desde la siguiente posición después de la coincidencia encontrada
+                posicion = texto.indexOf("HO", posicion + 1);
+            }
+
+            console.log("Las subcadenas aparecen un total de "+contador+" veces");
+            
+        }*/
+ 
+        function numeroPatrones2(cadena, patrones) {
+            contador = 0;
+            for (patron of patrones) {
+                let posicion = cadena.indexOf(patron);
+                while (posicion !== -1) {
+                    contador++;
+                    // Buscar desde la siguiente posición después de la coincidencia encontrada
+                    posicion = cadena.indexOf(patron, posicion + 1);
+                }
+            }
+            console.log(contador);
+        }
+        
+        //numeroPratones(cadena);
+        numeroPatrones2(cadena, patrones);
+        console.timeEnd("Tiempo de ejecución");
+    </script>
+</body>
+
+</html>
